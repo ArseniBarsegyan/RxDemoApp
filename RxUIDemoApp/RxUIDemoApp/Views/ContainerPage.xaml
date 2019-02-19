@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xamForms:ReactiveTabbedPage x:TypeArguments="viewModels:ContainerPageViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+             xmlns:views="clr-namespace:RxUIDemoApp.Views;assembly=RxUIDemoApp"
+             xmlns:viewModels="clr-namespace:RxUIDemoApp.ViewModels;assembly=RxUIDemoApp"
+             x:Class="RxUIDemoApp.Views.ContainerPage">
+    <views:ColorPage x:Name="ColorDemoPage" Title="Color demo" />
+    <views:RestPage x:Name="RestDemoPage" Title="Rest demo" />
+    <views:SearchDemoPage x:Name="SearchDemoPage" Title="Search demo" />
+</xamForms:ReactiveTabbedPage>

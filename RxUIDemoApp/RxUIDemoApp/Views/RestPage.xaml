@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xamForms:ReactiveContentPage x:TypeArguments="viewModels1:RestPageViewModel" 
+                              xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                              xmlns:viewModels1="clr-namespace:RxUIDemoApp.ViewModels"
+                              x:Class="RxUIDemoApp.Views.RestPage">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="StartDownloadButton" Text="Start" />
+            <Button x:Name="StopDownloadButton" Text="Stop" />
+            <Button x:Name="ClearButton" Text="Clear" />
+        </StackLayout>
+        
+        <ListView x:Name="ResultsList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding BirthYear}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</xamForms:ReactiveContentPage>
