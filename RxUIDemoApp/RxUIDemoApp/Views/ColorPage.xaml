@@ -13,5 +13,6 @@
         <Slider x:Name="GreenSelector" Minimum="0" Maximum="250" />
         <Label Text="Blue" />
         <Slider x:Name="BlueSelector" Minimum="0" Maximum="250" />
+        <Button x:Name="NavigateButton" Text="Navigate to new page" />
     </StackLayout>
 </xamForms:ReactiveContentPage>

@@ -13,6 +13,7 @@ namespace RxUIDemoApp.Views
         {
             InitializeComponent();
             this.ViewModel = new ContainerPageViewModel();
+
             this.WhenActivated(disposables =>
             {
                 this.OneWayBind(this.ViewModel, x => x.ColorViewModel, x => x.ColorDemoPage.ViewModel)

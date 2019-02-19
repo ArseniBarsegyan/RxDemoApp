@@ -8,6 +8,12 @@
     <StackLayout>
         <!-- Place new controls here -->
         <SearchBar x:Name="SearchBar" />
-        <StackLayout x:Name="ResultsStackLayout" />
+        <ListView x:Name="ResultsList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </rxui:ReactiveContentPage>

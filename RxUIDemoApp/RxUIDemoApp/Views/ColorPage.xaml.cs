@@ -12,17 +12,11 @@ namespace RxUIDemoApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ColorPage : ReactiveContentPage<ColorViewModel>
     {
-        private CompositeDisposable _compositeDisposable;
-
         public ColorPage()
         {
             InitializeComponent();
-        }
 
-        protected override void OnAppearing()
-        {
-            _compositeDisposable = new CompositeDisposable();
-            _compositeDisposable.Add(this.WhenActivated(disposable =>
+            this.WhenActivated(disposable =>
             {
                 this.Bind(ViewModel, vm => vm.RedColor, c => c.RedSelector.Value)
                     .DisposeWith(disposable);
@@ -30,6 +24,7 @@ namespace RxUIDemoApp.Views
                     .DisposeWith(disposable);
                 this.Bind(ViewModel, vm => vm.BlueColor, c => c.BlueSelector.Value)
                     .DisposeWith(disposable);
+                this.BindCommand(ViewModel, vm => vm.GoNext, c => c.NavigateButton);
 
                 // UI should be updated in main thread
                 this.WhenAnyValue(x => x.ViewModel.Color)
@@ -40,14 +35,7 @@ namespace RxUIDemoApp.Views
                             Color.FromRgba(observer.R, observer.G, observer.B, observer.A);
                     })
                     .DisposeWith(disposable);
-            }));
-            base.OnAppearing();
-        }
-
-        protected override void OnDisappearing()
-        {
-            _compositeDisposable.Dispose();
-            base.OnDisappearing();
+            });
         }
     }
 }

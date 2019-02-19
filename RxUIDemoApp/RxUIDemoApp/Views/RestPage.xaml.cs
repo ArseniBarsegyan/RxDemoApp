@@ -12,6 +12,7 @@ namespace RxUIDemoApp.Views
         public RestPage()
         {
             InitializeComponent();
+
             this.WhenActivated(disposable =>
             {
                 this.OneWayBind(ViewModel, vm => vm.People, c => c.ResultsList.ItemsSource)
