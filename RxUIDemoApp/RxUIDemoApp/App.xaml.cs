@@ -20,7 +20,13 @@ namespace RxUIDemoApp
             this.Router = new RoutingState();
             // Register ourselves as the Screen instance
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
-            RegisterViewModels();
+
+            // Register view models
+            Locator.CurrentMutable.Register(() => new SearchDemoPage(), typeof(IViewFor<SearchPageViewModel>));
+            Locator.CurrentMutable.Register(() => new ColorPage(), typeof(IViewFor<ColorViewModel>));
+            Locator.CurrentMutable.Register(() => new RestPage(), typeof(IViewFor<RestPageViewModel>));
+            Locator.CurrentMutable.Register(() => new ContainerPage(), typeof(IViewFor<ContainerPageViewModel>));
+            Locator.CurrentMutable.Register(() => new EventDemoPage(), typeof(IViewFor<EventDemoViewModel>));
 
             // Navigate
             this.Router.Navigate.Execute(new ContainerPageViewModel());
@@ -40,15 +46,6 @@ namespace RxUIDemoApp
         protected override void OnResume()
         {
             // Handle when your app resumes
-        }
-
-        private void RegisterViewModels()
-        {
-            // Register the views for the view models
-            Locator.CurrentMutable.Register(() => new SearchDemoPage(), typeof(IViewFor<SearchPageViewModel>));
-            Locator.CurrentMutable.Register(() => new ColorPage(), typeof(IViewFor<ColorViewModel>));
-            Locator.CurrentMutable.Register(() => new RestPage(), typeof(IViewFor<RestPageViewModel>));
-            Locator.CurrentMutable.Register(() => new ContainerPage(), typeof(IViewFor<ContainerPageViewModel>));
         }
     }
 }

@@ -16,11 +16,13 @@ namespace RxUIDemoApp.Views
 
             this.WhenActivated(disposables =>
             {
-                this.OneWayBind(this.ViewModel, x => x.ColorViewModel, x => x.ColorDemoPage.ViewModel)
+                this.OneWayBind(this.ViewModel, vm => vm.ColorViewModel, c => c.ColorDemoPage.ViewModel)
                     .DisposeWith(disposables);
-                this.OneWayBind(this.ViewModel, x => x.RestViewModel, x => x.RestDemoPage.ViewModel)
+                this.OneWayBind(this.ViewModel, vm => vm.RestViewModel, c => c.RestDemoPage.ViewModel)
                     .DisposeWith(disposables);
-                this.OneWayBind(this.ViewModel, x => x.SearchPageViewModel, x => x.SearchDemoPage.ViewModel)
+                this.OneWayBind(this.ViewModel, vm => vm.SearchPageViewModel, c => c.SearchDemoPage.ViewModel)
+                    .DisposeWith(disposables);
+                this.OneWayBind(this.ViewModel, vm => vm.EventDemoViewModel, c => c.EventDemoPage.ViewModel)
                     .DisposeWith(disposables);
             });
         }

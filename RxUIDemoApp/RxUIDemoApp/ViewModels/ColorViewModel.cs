@@ -35,7 +35,7 @@ namespace RxUIDemoApp.ViewModels
         public ColorViewModel()
         {
             Router = new RoutingState();
-            GoNext = ReactiveCommand.CreateFromObservable(() => this.HostScreen.Router.Navigate.Execute(new SearchPageViewModel()));
+            GoNext = ReactiveCommand.CreateFromObservable(() => this.HostScreen.Router.Navigate.Execute(new EventDemoViewModel()));
             UrlPathSegment = "Color";
             this.WhenAnyValue(x => x.RedColor, x => x.GreenColor, x => x.BlueColor,
                     (red, green, blue) => Color.FromArgb(255, red, green, blue))

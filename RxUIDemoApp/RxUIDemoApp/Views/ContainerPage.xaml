@@ -5,6 +5,7 @@
              xmlns:views="clr-namespace:RxUIDemoApp.Views;assembly=RxUIDemoApp"
              xmlns:viewModels="clr-namespace:RxUIDemoApp.ViewModels;assembly=RxUIDemoApp"
              x:Class="RxUIDemoApp.Views.ContainerPage">
+    <views:EventDemoPage x:Name="EventDemoPage" Title="Events demo" />
     <views:ColorPage x:Name="ColorDemoPage" Title="Color demo" />
     <views:RestPage x:Name="RestDemoPage" Title="Rest demo" />
     <views:SearchDemoPage x:Name="SearchDemoPage" Title="Search demo" />
