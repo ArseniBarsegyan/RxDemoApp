@@ -27,10 +27,14 @@ namespace RxUIDemoApp.Views
                     x => ResultsList.ItemSelected += x,
                     x => ResultsList.ItemSelected -= x)
                 .Select(args => args.EventArgs.SelectedItem)
-                .Subscribe(item =>
+                .Subscribe(async item =>
                 {
                     ResultsList.SelectedItem = null;
-                    Console.WriteLine(item);
+                    if (item is SearchResults searchResults)
+                    {
+                        ViewModel.SelectedSearchResults = searchResults;
+                        await ViewModel.GoNext.Execute();
+                    }
                 });
 
             this.WhenActivated(disposable =>

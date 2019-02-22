@@ -1,7 +1,12 @@
-﻿using System.Reactive.Disposables;
+﻿using System;
+using System.Reactive;
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
 using ReactiveUI;
 using ReactiveUI.XamForms;
+using RxUIDemoApp.Models;
 using RxUIDemoApp.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace RxUIDemoApp.Views

@@ -1,4 +1,5 @@
-﻿using ReactiveUI;
+﻿using System.Reactive;
+using ReactiveUI;
 using Splat;
 
 namespace RxUIDemoApp.ViewModels
@@ -11,6 +12,12 @@ namespace RxUIDemoApp.ViewModels
         public BaseViewModel()
         {
             HostScreen = Locator.Current.GetService<IScreen>();
+            Router = new RoutingState();
         }
+
+        #region routing
+        public RoutingState Router { get; }
+        public ReactiveCommand<Unit, IRoutableViewModel> GoNext { get; protected set; }
+        #endregion
     }
 }

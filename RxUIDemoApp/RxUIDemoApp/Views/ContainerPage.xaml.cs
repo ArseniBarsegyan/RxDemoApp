@@ -22,8 +22,6 @@ namespace RxUIDemoApp.Views
                     .DisposeWith(disposables);
                 this.OneWayBind(this.ViewModel, vm => vm.SearchPageViewModel, c => c.SearchDemoPage.ViewModel)
                     .DisposeWith(disposables);
-                this.OneWayBind(this.ViewModel, vm => vm.EventDemoViewModel, c => c.EventDemoPage.ViewModel)
-                    .DisposeWith(disposables);
             });
         }
     }

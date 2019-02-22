@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Reactive;
 using ReactiveUI;
 
 namespace RxUIDemoApp.ViewModels
@@ -34,16 +33,12 @@ namespace RxUIDemoApp.ViewModels
 
         public ColorViewModel()
         {
-            Router = new RoutingState();
-            GoNext = ReactiveCommand.CreateFromObservable(() => this.HostScreen.Router.Navigate.Execute(new EventDemoViewModel()));
             UrlPathSegment = "Color";
             this.WhenAnyValue(x => x.RedColor, x => x.GreenColor, x => x.BlueColor,
                     (red, green, blue) => Color.FromArgb(255, red, green, blue))
                 .ToProperty(this, v => v.Color, out _color);
+            
+            GoNext = ReactiveCommand.CreateFromObservable(() => HostScreen.Router.Navigate.Execute(new EventDemoViewModel()));
         }
-
-        public RoutingState Router { get; }
-
-        public ReactiveCommand<Unit, IRoutableViewModel> GoNext { get; }
     }
 }

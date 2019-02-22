@@ -5,14 +5,16 @@
                               xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
                               xmlns:viewModels="clr-namespace:RxUIDemoApp.ViewModels;assembly=RxUIDemoApp"
                               x:Class="RxUIDemoApp.Views.ColorPage">
-    <StackLayout Padding="20">
-        <BoxView x:Name="ColorDisplay" HeightRequest="250" />
-        <Label Text="Red" />
-        <Slider x:Name="RedSelector" Minimum="0" Maximum="250" />
-        <Label Text="Green" />
-        <Slider x:Name="GreenSelector" Minimum="0" Maximum="250" />
-        <Label Text="Blue" />
-        <Slider x:Name="BlueSelector" Minimum="0" Maximum="250" />
-        <Button x:Name="NavigateButton" Text="To event page" />
-    </StackLayout>
+    <ScrollView>
+        <StackLayout Padding="20">
+            <BoxView x:Name="ColorDisplay" HeightRequest="250" />
+            <Label Text="Red" />
+            <Slider x:Name="RedSelector" Minimum="0" Maximum="250" />
+            <Label Text="Green" />
+            <Slider x:Name="GreenSelector" Minimum="0" Maximum="250" />
+            <Label Text="Blue" />
+            <Slider x:Name="BlueSelector" Minimum="0" Maximum="250" />
+            <Button x:Name="NavigateButton" Text="To event page" />
+        </StackLayout>
+    </ScrollView>
 </xamForms:ReactiveContentPage>

@@ -11,7 +11,7 @@ namespace RxUIDemoApp.Services
     {
         private static readonly HttpClient HttpClient = new HttpClient();
 
-        public static async Task<Human> Get(int id)
+        public static async Task<Human> Get(long id)
         {
             var response = await HttpClient.GetAsync(new Uri("https://swapi.co/api/people/" + id + @"/"));
             if (response.StatusCode == HttpStatusCode.OK)

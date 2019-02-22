@@ -27,6 +27,7 @@ namespace RxUIDemoApp
             Locator.CurrentMutable.Register(() => new RestPage(), typeof(IViewFor<RestPageViewModel>));
             Locator.CurrentMutable.Register(() => new ContainerPage(), typeof(IViewFor<ContainerPageViewModel>));
             Locator.CurrentMutable.Register(() => new EventDemoPage(), typeof(IViewFor<EventDemoViewModel>));
+            Locator.CurrentMutable.Register(() => new DetailsPage(), typeof(IViewFor<DetailsViewModel>));
 
             // Navigate
             this.Router.Navigate.Execute(new ContainerPageViewModel());
